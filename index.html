@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Raleway:wght@400;700&display=swap" rel="stylesheet">
+  
+  <title>Frontend Mentor | Fylo landing page with dark theme and features grid</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+
+    body{
+      margin: unset;
+      background-color: hsl(218, 28%, 13%);
+    }
+
+    h1, h2, h3, h4, h5, p{
+      margin-top: unset;
+      margin-bottom: 10px;
+      color: #ffffff;
+    }
+
+    p{
+      font-size: 14px;
+    }
+
+    .open-sans-400{
+      font-family: 'Open Sans', sans-serif;
+      font-weight: 400;
+    }
+
+    .open-sans-700{
+      font-family: 'Open Sans', sans-serif;
+      font-weight: 700;
+    }
+
+    .raleway-400{
+      font-family: 'Raleway', sans-serif;
+      font-weight: 400;
+    }
+
+    .raleway-700{
+      font-family: 'Raleway', sans-serif;
+      font-weight: 700;
+    }
+
+    .nav-hero-section{
+      background-color: hsl(217, 28%, 15%);
+    }
+
+    .nav-bar {
+      display: flex;
+      justify-content: space-between;    
+      height: 100%;
+      padding: 15px;
+      gap: 5px;
+    }
+
+    .nav-bar > div{
+      border-radius: 5px;
+      padding: 8px;
+    }
+
+    .nav-items {
+      display: flex;
+      justify-content: flex-end;     
+      height: 100%;
+      padding: 15px;
+      gap: 5px;
+    }
+
+    .nav-items > div{
+      border-radius: 5px;
+      padding: 8px;
+    }
+
+    .hero-section {
+      display: flex;
+      justify-content: center;     
+      align-content: center;
+      align-items: center;
+      height: 100%;
+      padding: 15px;
+      gap: 5px;
+      flex-wrap: wrap;
+      background-image: url(images/bg-curvy-desktop.svg);
+      background-repeat: no-repeat;
+      background-position-y:bottom ;
+    }
+
+    .hero-section > div{
+      border-radius: 5px;
+      padding: 8px;
+      width: 50%;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;     
+      align-content: center;
+      align-items: center;
+    }
+
+    .hero-section h1, .hero-section p{
+      text-align: center;
+    }
+
+    .call-act-btn{
+      border-radius: 50px;
+      padding: 20px 80px;
+      font-family: 'Poppins', sans-serif;
+      font-weight: 700;
+      font-size: 14px;
+      border: none;
+      background-image: linear-gradient(to right, hsl(176, 68%, 64%), 	hsl(198, 60%, 50%));
+      color: #ffffff;
+      cursor: pointer;
+    }
+
+    .call-act-btn:hover{
+      opacity: .6;
+    }
+
+    .features-section {
+      display: flex;
+      justify-content: center; 
+      align-items: center; 
+      flex-wrap: wrap; 
+      height: 100%;
+      padding: 15px;
+      gap: 100px;
+      margin-top: 100px;
+    }
+
+    .features-section > div{
+      padding: 8px;
+      width: 30%;
+    }
+
+    .features-section h3{
+      text-align: center;
+    }
+
+    .features-section p{
+      text-align: center;
+    }
+
+    .featured-img{
+      display: flex;
+      justify-content: center;
+    }
+
+    .third-section {
+      display: flex;
+      justify-content: center; 
+      align-items: center; 
+      flex-wrap: wrap; 
+      height: 100%;
+      padding: 100px 15px;
+      gap: 5px;
+    }
+
+    .third-section > div{
+      padding: 8px;
+    }
+
+    .stay-productive{
+      width: 400px;
+    }
+
+    .stay-productive-text {
+      display: flex;
+      justify-content: flex-start;  
+      flex-direction: column; 
+      flex-wrap: wrap; 
+      height: 100%;
+      padding: 15px;
+      gap: 5px;
+      width: 400px;
+    }
+
+    .stay-productive-text > div{
+      padding: 8px;
+    }
+
+    .fylo-arrow-text {
+      display: flex;
+      justify-content: flex-start;  
+      flex-direction: row;  
+      height: 100%;
+      gap: 5px;
+      flex-wrap: wrap;
+      align-items: center;
+      align-content: center;
+    }
+
+    .fylo-arrow{
+      color: hsl(176, 68%, 64%);
+    }
+
+    .underline-see{
+      border-bottom: solid 1px hsl(176, 68%, 64%);
+      width: 40%;
+    }
+
+    .testimonials-section {
+      display: flex;
+      justify-content: center; 
+      align-items: center; 
+      flex-wrap: wrap; 
+      align-content: center;
+      height: 100%;
+      padding: 15px;
+      gap: 25px;
+      margin: 100px 0px;
+    }
+
+    .testimonials-section > div{
+      background:hsl(219, 30%, 18%);
+      box-shadow: 10px 10px 5px  hsl(217, 28%, 15%);
+      border-radius: 10px;
+      padding: 8px;
+      width: 25%
+    }
+
+    .testimonial-item {
+      display: flex;
+      justify-content: flex-start;  
+      flex-direction: column; 
+      flex-wrap: wrap; 
+      height: 100%;
+      padding: 15px;
+      gap: 5px;
+    }
+
+    .testimonial-item > div{
+      padding: 8px;
+    }
+
+    .testimonial-image-name{
+      display: flex;
+      justify-content: flex-start;  
+      flex-direction: row; 
+      flex-wrap: wrap; 
+      height: 100%;
+      gap: 5px;
+      align-items: center;
+    }
+
+    .testimonial-name{
+      display: flex;
+      justify-content: flex-start; 
+      flex-direction: column; 
+      flex-wrap: wrap; 
+      height: 100%;
+    }
+
+    .testimonial-name p{
+      margin-bottom:unset ;
+    }
+
+    .testimonial-image-name img{
+      border-radius: 100px;
+      width: 40px;
+    }
+
+    .testimonial-bg-quote{
+      z-index: -1;
+      margin-top: 80px;
+      margin-left: 120px;
+      position: absolute;
+    }
+
+    .get-early-access-section {
+      display: flex;
+      justify-content: center;  
+      flex-direction: row; 
+      flex-wrap: wrap; 
+      height: 100%;
+      padding: 15px;
+      gap: 5px;
+    }
+
+    .get-early-access-section > div{
+      background:hsl(217, 28%, 15%);
+      border-radius: 10px;
+      padding: 80px 100px;
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-content: center;
+      width: 50%;
+      z-index: 99;
+    }
+
+    .get-early-access-section p{
+      text-align: center;
+    }
+
+    .early-access-content{
+      display: flex;
+      justify-content: center;  
+      flex-direction: row; 
+      flex-wrap: wrap; 
+      height: 100%;
+      padding: 15px;
+      gap: 5px;
+    }
+
+    .email-input{
+      border-radius: 50px;
+      padding: 20px 120px 20px 25px;
+      border: none;
+    }
+
+
+
+
+    
+  </style>
+</head>
+<body>
+
+  <div class="nav-hero-section">
+
+    <div class="nav-bar">
+    
+      <div class="item1">
+        <img src="images/logo.svg" alt="">
+      </div>
+      <div class="nav-items">
+        <div class="item1">
+          <h3 class="raleway-400">Features</h3>
+        </div>
+        <div class="item2">
+          <h3 class="raleway-400">Team</h3>
+        </div>
+        <div class="item3">
+          <h3 class="raleway-400">Sign In</h3>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-section">
+      <div class="item1">
+        <img src="images/illustration-intro.png" alt="" style="width: 500px;">
+        <h1 class="raleway-700">All your files in one secure location, accessible anywhere.</h1>
+        <p class="open-sans-400">Fylo stores all your most important files in one secure location. Access them wherever you need, share and collaborate with friends family, and co-workers.</p>
+        <button class="call-act-btn">
+          Get Started
+        </button>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="features-section">
+
+    <div class="item1">
+      <div class="featured-img"><img src="images/icon-access-anywhere.svg" alt=""></div>
+      <h3 class="raleway-700">Access your files, anywhere</h3>
+      <p class="open-sans-400">The ability to use a smartphone, tablet, or computer to access your account means your files follow you everywhere.</p>
+    </div>
+    <div class="item2">
+      <div class="featured-img"><img src="images/icon-security.svg" alt=""></div>
+      <h3 class="raleway-700">Security you can trust</h3>
+      <p class="open-sans-400">2-factor authentication and user-controlled encryption are just a couple of the security features we allow to help secure your files.</p>
+    </div>
+
+  </div>
+
+  <div class="features-section">
+
+    <div class="item1">
+      <div class="featured-img"><img src="images/icon-collaboration.svg" alt=""></div>
+      <h3 class="raleway-700">Real-time collaboration</h3>
+      <p class="open-sans-400">Securely share files and folders with friends, family and colleagues for live collaboration. No email attachments required.</p>
+    </div>
+    <div class="item2">
+      <div class="featured-img"><img src="images/icon-any-file.svg" alt=""></div>
+      <h3 class="raleway-700"> Store any type of file</h3>
+      <p class="open-sans-400">Whether you're sharing holidays photos or work documents, Fylo has you covered allowing for all file types to be securely stored and shared.</p>
+    </div>
+    
+  </div>
+
+  <div class="third-section">
+   
+    <div class="item1">
+      <img src="images/illustration-stay-productive.png" alt="" class="stay-productive">
+    </div>
+    <div class="stay-productive-text">
+      <div class="item1">
+        <h1 class="raleway-700">Stay productive, wherever you are</h1>
+      </div>
+      <div class="item2">
+        <p class="open-sans-400"> Never let location be an issue when accessing your files. Fylo has you covered for all of your file 
+          storage needs.</p>
+        
+        <p class="open-sans-400">Securely share files and folders with friends, family and colleagues for live collaboration. No email attachments required.</p>
+      </div>
+      <div class="underline-see">
+        <div class="fylo-arrow-text">
+          <div class="item1">
+            <p class="open-sans-400 fylo-arrow">See how Fylo works</p> 
+          </div>
+          <div class="item2">
+            <img src="images/icon-arrow.svg" alt="">
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="testimonial-bg-quote">
+    <img src="images/bg-quotes.png" alt="">
+  </div>
+
+      <div class="testimonials-section">
+        <div class="testimonial-item">
+          <div class="item1">
+            <h4 class="open-sans-400">Fylo has improved our team productivity by an order of magnitude. Since making the switch our team has become a well-oiled collaboration machine.</h4>
+          </div>
+          <div class="testimonial-image-name">
+            <div class="item1">
+              <img src="images/profile-1.jpg" alt="">
+            </div>
+            <div class="testimonial-name">
+              <div class="item1">
+                <p class="open-sans-700">Satish Patel</p>
+              </div>
+              <div class="item2">
+                <p class="open-sans-400">Founder & CEO, Huddle</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-item">
+          <div class="item1">
+            <h4 class="open-sans-400">Fylo has improved our team productivity by an order of magnitude. Since making the switch our team has become a well-oiled collaboration machine.</h4>
+          </div>
+          <div class="testimonial-image-name">
+            <div class="item1">
+              <img src="images/profile-2.jpg" alt="">
+            </div>
+            <div class="testimonial-name">
+              <div class="item1">
+                <p class="open-sans-700">Bruce McKenzie</p>
+              </div>
+              <div class="item2">
+                <p class="open-sans-400">Founder & CEO, Huddle</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-item">
+          <div class="item1">
+            <h4 class="open-sans-400">Fylo has improved our team productivity by an order of magnitude. Since making the switch our team has 
+              become a well-oiled collaboration machine.</h4>
+          </div>
+          <div class="testimonial-image-name">
+            <div class="item1">
+              <img src="images/profile-3.jpg" alt="">
+            </div>
+            <div class="testimonial-name">
+              <div class="item1">
+                <p class="open-sans-700">Iva Boyd</p>
+              </div>
+              <div class="item2">
+                <p class="open-sans-400">Founder & CEO, Huddle</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+
+      <div class="get-early-access-section">
+        <div class="early-access-content">
+          <h1 class="raleway-700">Get early access today</h1>
+          <p class="open-sans-400">  It only takes a minute to sign up and our free starter tier is extremely generous. If you have any questions, our support team would be happy to help you.</p>
+
+          <div class="item1">
+            <input type="email" id="email" name="email" class="email-input" placeholder="example@email.com">
+          </div>
+          <div class="item2">
+            <button class="call-act-btn">
+            Get Started for Free
+            </button>
+          </div>
+        </div>
+      </div>
+
+    
+
+  <h1 class="raleway-700">All your files in one secure location, accessible anywhere.</h1>
+
+  <h5 class="raleway-400">Fylo stores all your most important files in one secure location. Access them wherever 
+  you need, share and collaborate with friends family, and co-workers.</h5>
+  
+  <p class="open-sans-700">The ability to use a smartphone, tablet, or computer to access your account means your files follow you everywhere.</p>
+
+  <p class="open-sans-400">2-factor authentication and user-controlled encryption are just a couple of the security features we allow to help secure your files.</p>
+
+
+
+  Get Started For Free
+
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et 
+  dolore magna aliqua
+
+  +1-543-123-4567
+  example@fylo.com
+
+  About Us
+  Jobs
+  Press
+  Blog
+
+  Contact Us
+  Terms
+  Privacy
+
+  <footer>
+    <p class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+      Coded by <a href="#">k-t</a>.
+    </p>
+  </footer>
+</body>
+</html>
