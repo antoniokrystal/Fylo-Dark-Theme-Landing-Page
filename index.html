@@ -319,10 +319,96 @@
       border: none;
     }
 
+    .footer-container {
+      display: flex;
+      justify-content: space-around;     
+      background-color: hsl(216, 53%, 9%);
+      height: 100%;
+      padding: 150px 15px;
+      margin-top: -150px;
+      gap: 5px;
+    }
 
+    .footer-container > div{
+      padding: 40px 8px 0;
+    }
 
+    .container-1 {
+      display: flex;
+      justify-content: flex-start;     
+      height: 100%;
+      padding: 15px;
+      gap: 5px;
+    }
 
-    
+    .container-1 > div{
+      padding: 8px;
+    }
+
+    .logo-loc-container {
+      display: flex;
+      justify-content: flex-start;  
+      flex-direction: column;  
+      height: 100%;
+      padding: 15px;
+      gap: 5px;
+      }
+
+    .logo-loc-container > div{
+      padding: 8px;
+    }
+
+    .location-content {
+      display: flex;
+      justify-content: flex-start;  
+      flex-direction: row;  
+      height: 100%;
+      gap: 5px;
+    }
+
+    .location-content > div{
+      padding: 8px;
+    }
+
+    .footer-text{
+      width: 300px;
+    }
+
+    .phone-email-content {
+      display: flex;
+      justify-content: flex-start;  
+      flex-direction: column;  
+      height: 100%;
+      padding: 15px;
+      gap: 5px;
+    }
+
+    .f-2-section{
+      display: flex;
+      justify-content: center;  
+      flex-direction: row;  
+      height: 100%;
+      padding: 15px;
+      gap: 5px;
+    }
+
+    .f-2-section > div{
+      padding: 8px;
+      width: 150px;
+    }
+
+    .footer-nav{
+      color: #ffffff;
+      font-family: 'Open Sans', sans-serif;
+      font-weight: 400;
+      text-decoration: none;
+    }
+
+    ion-icon {
+      font-size: 32px;
+      color: #ffffff;
+    }
+
   </style>
 </head>
 <body>
@@ -500,35 +586,74 @@
         </div>
       </div>
 
+
+      <div class="footer-container">
+   
+        <div class="container-1">
+          <div class="logo-loc-container">
+            <div class="item1">
+              <img src="images/logo.svg" alt="">
+            </div>
+            <div class="location-content">
+              <div class="item1">
+                <img src="images/icon-location.svg" alt="">
+              </div>
+              <div class="footer-text">
+                <p class="open-sans-400">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>
+              </div>
+              <div class="phone-email-content">
+                <div class="item1">
+                  <div class="location-content">
+                    <div class="item1">
+                      <img src="images/icon-phone.svg" alt="">
+                    </div>
+                    <div class="footer-email-num">
+                      <p class="open-sans-400">+1-543-123-4567</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="item2">
+                  <div class="location-content">
+                    <div class="item1">
+                      <img src="images/icon-email.svg" alt="">
+                    </div>
+                    <div class="footer-email-num">
+                      <p class="open-sans-400">example@fylo.com</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div> 
+
+            
+          </div>
+          
+        </div>
+
+
+        <div class="f-2-section">
+          <div class="item1">
+            <a href="#" class="footer-nav"><p>About Us</p></a>
+            <a href="#" class="footer-nav"><p>Jobs</p></a>
+            <a href="#" class="footer-nav"><p>Press</p></a>
+            <a href="#" class="footer-nav"><p>Blog</p></a>
+          </div>
+          <div class="item2">
+            <a href="#" class="footer-nav"><p>Contact Us</p></a>
+            <a href="#" class="footer-nav"><p>Terms</p></a>
+            <a href="#" class="footer-nav"><p>Privacy</p></a>
+          </div>
+        </div>
+
+        <div class="item3">
+          <ion-icon name="logo-facebook"></ion-icon>
+          <ion-icon name="logo-twitter"></ion-icon>
+          <ion-icon name="logo-instagram"></ion-icon>
+        </div>
     
-
-  <h1 class="raleway-700">All your files in one secure location, accessible anywhere.</h1>
-
-  <h5 class="raleway-400">Fylo stores all your most important files in one secure location. Access them wherever 
-  you need, share and collaborate with friends family, and co-workers.</h5>
-  
-  <p class="open-sans-700">The ability to use a smartphone, tablet, or computer to access your account means your files follow you everywhere.</p>
-
-  <p class="open-sans-400">2-factor authentication and user-controlled encryption are just a couple of the security features we allow to help secure your files.</p>
+      </div>
 
 
-
-  Get Started For Free
-
-  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et 
-  dolore magna aliqua
-
-  +1-543-123-4567
-  example@fylo.com
-
-  About Us
-  Jobs
-  Press
-  Blog
-
-  Contact Us
-  Terms
-  Privacy
 
   <footer>
     <p class="attribution">
@@ -537,4 +662,8 @@
     </p>
   </footer>
 </body>
+
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
 </html>
