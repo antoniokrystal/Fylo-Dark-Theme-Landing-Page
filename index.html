@@ -327,6 +327,22 @@
       border: none;
     }
 
+    .call-act-btn-footer{
+      border-radius: 50px;
+      padding: 20px 80px;
+      font-family: 'Poppins', sans-serif;
+      font-weight: 700;
+      font-size: 14px;
+      border: none;
+      background-image: linear-gradient(to right, hsl(176, 68%, 64%), 	hsl(198, 60%, 50%));
+      color: #ffffff;
+      cursor: pointer;
+    }
+
+    .call-act-btn-footer:hover{
+      background-image: linear-gradient(to right, hsl(176, 52%, 71%), 	hsl(176, 52%, 71%));
+    }
+
     .footer-container {
       display: flex;
       justify-content: space-around;     
@@ -335,6 +351,7 @@
       padding: 150px 15px;
       margin-top: -150px;
       gap: 5px;
+      flex-wrap: wrap;
     }
 
     .footer-container > div{
@@ -372,6 +389,7 @@
       flex-direction: row;  
       height: 100%;
       gap: 5px;
+      flex-wrap: wrap;
     }
 
     .location-content > div{
@@ -430,6 +448,76 @@
       color: #ffffff;
     }
 
+    .hero-image{
+      width: 500px;
+    }
+
+    @media only screen and (max-width: 425px) {
+      .hero-section > div{
+        width: 100%;
+      }
+
+      .hero-image{
+        width: 100%;
+      }
+
+      .nav-items h3{
+        font-size: 15px;
+      }
+
+      .nav-items > div{
+        padding: 2px;
+      }
+
+      .nav-logo{
+        width: 100px;
+      }
+
+      .stay-productive{
+        width: 100%;
+      }
+
+      .underline-see {
+        width: 50%;
+      }
+
+      .features-section > div {
+        width: 100%;
+      }
+
+      .testimonials-section > div {
+        width: 90%;
+      }
+
+      .testimonial-bg-quote {
+        margin-left: 20px;
+      }
+
+      .third-section{
+        padding: 100px 15px 0;
+      }
+
+      .call-act-btn-footer{
+        padding: 20px;
+      }
+
+      .email-input{
+        padding: 10px;
+      }
+
+      .get-early-access-section > div {
+        padding: 40px 20px;
+        width: 100%;
+      }
+
+      .early-access-content h1{
+        text-align: center;
+      }
+
+
+
+    }
+
   </style>
 </head>
 <body>
@@ -439,7 +527,7 @@
     <div class="nav-bar">
     
       <div class="item1">
-        <img src="images/logo.svg" alt="">
+        <img src="images/logo.svg" alt="" class="nav-logo">
       </div>
       <div class="nav-items">
         <div class="item1">
@@ -456,7 +544,7 @@
 
     <div class="hero-section">
       <div class="item1">
-        <img src="images/illustration-intro.png" alt="" style="width: 500px;">
+        <img src="images/illustration-intro.png" alt="" class="hero-image">
         <h1 class="raleway-700">All your files in one secure location, accessible anywhere.</h1>
         <p class="open-sans-400">Fylo stores all your most important files in one secure location. Access them wherever you need, share and collaborate with friends family, and co-workers.</p>
         <button class="call-act-btn">
@@ -600,7 +688,7 @@
             <input type="email" id="email" name="email" class="email-input" placeholder="example@email.com">
           </div>
           <div class="item2">
-            <button class="call-act-btn">
+            <button class="call-act-btn-footer">
             Get Started for Free
             </button>
           </div>
